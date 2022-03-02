@@ -53,7 +53,7 @@ const phoneIDeatil = (phoneId) => {
 }
 // show details
 const dispalyShowDetails = phone => {
-    console.log(phone.mainFeatures.chipSet);
+
     const phoneInfo = document.getElementById('phone-info');
     phoneInfo.innerHTML = '';
     const div = document.createElement('div');
@@ -70,25 +70,24 @@ const dispalyShowDetails = phone => {
        <h3><span class="text-primary">Release Date : </span>${phone.releaseDate ? phone.releaseDate : 'Not found'}</h3>
       <h3><span class="text-primary">Name:</span>${phone.name}</h3>
       
-      
-        
-       <h2 class="">Others</h2>
+      <h2>Features</h2>
 
-       <p><span class="text-primary"> WLAN:  </span>${phone.others ? phone.others.WLAN : 'Not Found'}</p>
+      <p><span  class="text-primary fw-bold> DisplaySize: </span>${phone.mainFeatures?.displaySize}</p>
+      <p><span  class=" text-primary fw-bold>Storage: </span>${phone.mainFeatures?.storage}</p>
+      <p><span  class=" text-primary fw-bold>Memory: </span>${phone.mainFeatures?.memory}</p>
+     <p><span class="class-primary fw-bold>Sensors:</span>${phone.mainFeatures?.sensors}"</p>
+     <p><span  class=" text-primary fw-bold>Storage: </span>${phone.mainFeatures.chipSet}</p>
+ 
+        
+       <h2>Others</h2>
+      <p><span> WLAN:  </span>${phone.others ? phone.others.WLAN : 'Not Found'}</p>
        <p><span > Bluetooth: </span>${phone.others ? phone.others.Bluetooth : 'Not Found'}</p>
         <p><span> GPS:  </span>${phone.others ? phone.others.GPS : 'Not Found'}</p>
        <p><span> NFC:</span>${phone.others ? phone.others.NFC : 'Not Found'}</p>
        <p><span> Radio: </span>${phone.others ? phone.others.Radio : 'Not Found'}</p>
        <p><span> USB: </span>${phone.others ? phone.others.USB : 'Not Found'}</p>
 
-       <h2>Features</h2>
-      <p><span  class="text-primary fw-bold> DisplaySize: </span>${phone.mainFeatures?.displaySize}</p>
-      <p><span  class=" text-primary fw-bold>Storage: </span>${phone.mainFeatures?.storage}</p>
-      <p><span class="class-primary fw-bold>ChipSet:</span>${phone.mainFeatures?.chipSet}"</p>
-      <p><span  class=" text-primary fw-bold>Memory: </span>${phone.mainFeatures?.memory}</p>
-     <p><span class="class-primary fw-bold>Sensors:</span>${phone.mainFeatures?.sensors}"</p>
-     <p><span  class=" text-primary fw-bold>Storage: </span>${phone.mainFeatures.chipSet}</p>
-
+       
    </div >
  </div> `;
     phoneInfo.appendChild(div)
