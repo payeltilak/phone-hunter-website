@@ -1,15 +1,17 @@
+// search phone
 const searchPhone = () => {
     const searchInput = document.getElementById('search-input');
     const searchText = searchInput.value;
-    // console.log(searchText);
+
     searchInput.value = '';
     const url = `https://openapi.programming-hero.com/api/phones?search=${searchText}`
     fetch(url)
         .then(res => res.json())
         .then(data => displayPhoneDetails(data.data.slice(0, 20)))
 }
+// display phone deatils
 const displayPhoneDetails = (phones) => {
-    console.log(phones);
+
     const searchResult = document.getElementById("search-result");
     searchResult.innerHTML = '';
     const phoneInfo = document.getElementById('phone-info')
@@ -23,12 +25,13 @@ const displayPhoneDetails = (phones) => {
 
     }
     phones.forEach(phone => {
-        console.log(phone)
+
         const div = document.createElement('div')
         div.classList.add('col');
 
+        // Inner Html of card
         div.innerHTML = `
-        <div class="card h-100 display d-flex bg-success bg-opacity-25 ">
+        <div class="card  h-100 display d-flex bg-success bg-opacity-25 ">
             <img src="${phone.image}" class="card-img-top w-50 mx-auto " alt="...">
             <div class="card-body mx-auto">
                 <h2 class="card-title">${phone.phone_name}</h2>
@@ -40,6 +43,7 @@ const displayPhoneDetails = (phones) => {
         searchResult.appendChild(div);
     })
 }
+// phone information
 const phoneIDeatil = (phoneId) => {
     const url = `https://openapi.programming-hero.com/api/phone/${phoneId}`
     fetch(url)
@@ -47,6 +51,7 @@ const phoneIDeatil = (phoneId) => {
         .then(data => dispalyShowDetails(data?.data))
 
 }
+// show details
 const dispalyShowDetails = phone => {
     console.log(phone.mainFeatures.chipSet);
     const phoneInfo = document.getElementById('phone-info');
@@ -55,11 +60,12 @@ const dispalyShowDetails = phone => {
     div.classList.add('card');
 
     div.innerHTML = `
-    <div class="mb-5 mx-auto mt-5 d-flex justify-content-center "> 
-     <div class="d-flex justify-content-center align-items-center">
+    
+    <div class=" row mb-5 mx-auto mt-5 d-flex justify-content-center w-75  "> 
+     <div class="col-lg-6 d-flex justify-content-center align-items-center">
      <img  src="${phone.image}" class="card-img-top p-5 h-75" alt="...">
      </div>
-   <div class="card-body mx-auto">
+   <div class="col-lg-6 card-body mx-auto">
        <h2 class="card-title fw-bold">${phone.brand}</h2>
        <h3><span class="text-primary">Release Date : </span>${phone.releaseDate ? phone.releaseDate : 'Not found'}</h3>
       <h3><span class="text-primary">Name:</span>${phone.name}</h3>
