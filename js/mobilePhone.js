@@ -60,35 +60,28 @@ const dispalyShowDetails = phone => {
     div.classList.add('card');
 
     div.innerHTML = `
-    
     <div class=" row mb-5 mx-auto mt-5 d-flex justify-content-center w-75  "> 
      <div class="col-lg-6 d-flex justify-content-center align-items-center">
-     <img  src="${phone.image}" class="card-img-top p-5 h-75" alt="...">
+     <img  src="${phone.image}" class="card-img-top p-5  w-75" alt="...">
      </div>
    <div class="col-lg-6 card-body mx-auto">
        <h2 class="card-title fw-bold">${phone.brand}</h2>
        <h3><span class="text-primary">Release Date : </span>${phone.releaseDate ? phone.releaseDate : 'Not found'}</h3>
       <h3><span class="text-primary">Name:</span>${phone.name}</h3>
-      
-      <h2>Features</h2>
-
-      <p><span  class="text-primary fw-bold> DisplaySize: </span>${phone.mainFeatures?.displaySize}</p>
-      <p><span  class=" text-primary fw-bold>Storage: </span>${phone.mainFeatures?.storage}</p>
-      <p><span  class=" text-primary fw-bold>Memory: </span>${phone.mainFeatures?.memory}</p>
-     <p><span class="class-primary fw-bold>Sensors:</span>${phone.mainFeatures?.sensors}"</p>
-     <p><span  class=" text-primary fw-bold>Storage: </span>${phone.mainFeatures.chipSet}</p>
- 
-        
-       <h2>Others</h2>
-      <p><span> WLAN:  </span>${phone.others ? phone.others.WLAN : 'Not Found'}</p>
-       <p><span > Bluetooth: </span>${phone.others ? phone.others.Bluetooth : 'Not Found'}</p>
-        <p><span> GPS:  </span>${phone.others ? phone.others.GPS : 'Not Found'}</p>
-       <p><span> NFC:</span>${phone.others ? phone.others.NFC : 'Not Found'}</p>
-       <p><span> Radio: </span>${phone.others ? phone.others.Radio : 'Not Found'}</p>
-       <p><span> USB: </span>${phone.others ? phone.others.USB : 'Not Found'}</p>
-
-       
-   </div >
- </div> `;
+       <h2>Features</h2>
+      <p><span  class="text-primary fw-bold"> DisplaySize: </span>${phone.mainFeatures.displaySize}</p>
+      <p><span  class=" text-primary fw-bold"> Storage: </span>${phone.mainFeatures.storage}</p>
+      <p><span  class=" text-primary fw-bold"> Memory: </span>${phone.mainFeatures.memory}</p>
+     <p><span class="class-primary fw-bold"> Sensors:</span>${phone.mainFeatures.sensors}"</p>
+     <p><span  class=" text-primary fw-bold"> Storage: </span>${phone.mainFeatures.chipSet}</p>
+      <h2>Others</h2>
+     <p><span> WLAN: </span>${phone.others ? phone.others.WLAN : 'Not Found'}</p>
+      <p><span > Bluetooth: </span>${phone.others ? phone.others.Bluetooth : 'Not Found'}</p>
+       <p><span> GPS:  </span>${phone.others ? phone.others.GPS : 'Not Found'}</p>
+      <p><span> NFC:</span>${phone.others ? phone.others.NFC : 'Not Found'}</p>
+      <p><span> Radio: </span>${phone.others ? phone.others.Radio : 'Not Found'}</p>
+      <p><span> USB: </span>${phone.others ? phone.others.USB : 'Not Found'}</p>
+    </div>
+     </div> `;
     phoneInfo.appendChild(div)
 }
